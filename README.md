@@ -9,27 +9,25 @@ Here's what I want in a reference guide:
 - Presented as a single Python script, so that I can keep it open in my IDE and search it when needed
 - Code that can be run from top to bottom, with the relevant objects defined nearby
 
-This is not written as a full-fledged "learn Python" tutorial, though I ordered the topics such that you can read it like a tutorial, in that no topic depends on material below it.
+This is not written as a full-fledged Python tutorial, though I ordered the topics such that you can read it like a tutorial (each topic depends only on material preceding it).
 
 ### Topics
 
-Here are the currently available topics:
-
-- Imports
-- Data Types
-- Math
-- Comparisons and Boolean Operations
-- Conditional Statements
-- Lists
-- Tuples
-- Strings
-- Dictionaries
-- Sets
-- Defining Functions
-- Anonymous (Lambda) Functions
-- For Loops and While Loops
-- Comprehensions
-- Map, Reduce, Filter
+- [Imports](reference.py#L28)
+- [Data Types](reference.py#L52)
+- [Math](reference.py#L84)
+- [Comparisons and Boolean Operations](reference.py#L102)
+- [Conditional Statements](reference.py#L118)
+- [Lists](reference.py#L147)
+- [Tuples](reference.py#223)
+- [Strings](reference.py#L258)
+- [Dictionaries](reference.py#L319)
+- [Sets](reference.py#L371)
+- [Defining Functions](reference.py#L408)
+- [Anonymous (Lambda) Functions](reference.py#L473)
+- [For Loops and While Loops](reference.py#L494)
+- [Comprehensions](reference.py#L540)
+- [Map, Reduce, Filter](reference.py#L594)
 
 ### Other Resources
 
