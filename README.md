@@ -33,6 +33,6 @@ If you like the general format of this guide, but need more explanation of each 
 
 If you are looking for a resource that will help you to learn Python from scratch, this is [my list of recommended resources](https://github.com/justmarkham/DAT8#python-resources).
 
-If there's a topic or example you'd like me to add to this guide, or you notice a mistake, please [create a GitHub issue](issues) or [contact me directly](http://www.dataschool.io/about/).
+If there's a topic or example you'd like me to add to this guide, or you notice a mistake, please [create a GitHub issue](../../issues) or [contact me directly](http://www.dataschool.io/about/).
 
 Thank you!
