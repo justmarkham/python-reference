@@ -11,6 +11,8 @@ Here's what I want in a reference guide:
 
 This is not written as a full-fledged "learn Python" tutorial, though I ordered the topics such that you can read it like a tutorial, in that no topic depends on material below it.
 
+### Topics
+
 Here are the currently available topics:
 
 - Imports
@@ -29,9 +31,13 @@ Here are the currently available topics:
 - Comprehensions
 - Map, Reduce, Filter
 
+### Other Resources
+
 If you like the general format of this guide, but need more explanation of each topic, I highly recommend reading the Appendix of [Python for Data Analysis](http://shop.oreilly.com/product/0636920023784.do). It presents the essentials of the Python language in a clear and focused manner.
 
 If you are looking for a resource that will help you to learn Python from scratch, this is [my list of recommended resources](https://github.com/justmarkham/DAT8#python-resources).
+
+### Getting in Touch
 
 If there's a topic or example you'd like me to add to this guide, or you notice a mistake, please [create a GitHub issue](../../issues) or [contact me directly](http://www.dataschool.io/about/).
 
