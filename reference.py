@@ -1,16 +1,9 @@
 '''
-Python 2.7x Reference Guide
+Python 2.7x Quick Reference
 https://github.com/justmarkham/python-reference
 
 By Kevin Markham (kevin@dataschool.io)
 http://dataschool.io
-
-Adapted from:
-    https://docs.python.org/2/
-    http://www.codecademy.com/tracks/python
-    https://developers.google.com/edu/python/
-    Book: Python for Data Analysis (Appendix)
-    and many other sources...
 
 Table of Contents:
     Imports

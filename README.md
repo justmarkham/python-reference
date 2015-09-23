@@ -1,1 +1,1 @@
-## Python 2.7x Reference Guide
+## Python 2.7x Quick Reference
