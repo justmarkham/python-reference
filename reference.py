@@ -1,5 +1,5 @@
 '''
-Python 2.7x Quick Reference
+Python 2.7 Quick Reference
 https://github.com/justmarkham/python-reference
 
 By Kevin Markham (kevin@dataschool.io)
@@ -21,14 +21,6 @@ Table of Contents:
     For Loops and While Loops
     Comprehensions
     Map, Reduce, Filter
-
-Future additions:
-    Zip
-    Try/Except
-    *args
-    Assertions
-    Reading/writing files
-    And more...
 '''
 
 

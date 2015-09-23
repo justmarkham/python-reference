@@ -1,1 +1,1 @@
-## Python 2.7x Quick Reference
+## Python 2.7 Quick Reference
