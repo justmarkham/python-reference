@@ -101,11 +101,14 @@ from __future__ import division
 
 ### COMPARISONS AND BOOLEAN OPERATIONS ###
 
+# assignment statement
+x = 5
+
 # comparisons (these return True)
-5 > 3
-5 >= 3
-5 != 3
-5 == 5
+x > 3
+x >= 3
+x != 3
+x == 5
 
 # boolean operations (these return True)
 5 > 3 and 6 > 3
@@ -116,9 +119,6 @@ False or not False and True     # evaluation order: not, and, or
 
 
 ### CONDITIONAL STATEMENTS ###
-
-# assignment statement
-x = 5
 
 # if statement
 if x > 0:
