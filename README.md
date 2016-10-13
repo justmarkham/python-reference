@@ -1,4 +1,4 @@
-## Python 2.7 Quick Reference
+## Python Quick Reference
 
 This is the [reference guide to Python](reference.py) that I **wish** had existed when I was learning the language.
 
@@ -17,17 +17,17 @@ This is **not** written as a full-fledged Python tutorial, though I ordered the 
 - [Data Types](reference.py#L52)
 - [Math](reference.py#L84)
 - [Comparisons and Boolean Operations](reference.py#L102)
-- [Conditional Statements](reference.py#L118)
-- [Lists](reference.py#L147)
-- [Tuples](reference.py#223)
-- [Strings](reference.py#L258)
+- [Conditional Statements](reference.py#L121)
+- [Lists](reference.py#L150)
+- [Tuples](reference.py#224)
+- [Strings](reference.py#L259)
 - [Dictionaries](reference.py#L319)
-- [Sets](reference.py#L371)
-- [Defining Functions](reference.py#L408)
-- [Anonymous (Lambda) Functions](reference.py#L473)
-- [For Loops and While Loops](reference.py#L494)
+- [Sets](reference.py#L372)
+- [Defining Functions](reference.py#L409)
+- [Anonymous (Lambda) Functions](reference.py#L474)
+- [For Loops and While Loops](reference.py#L495)
 - [Comprehensions](reference.py#L540)
-- [Map, Reduce, Filter](reference.py#L594)
+- [Map and Filter](reference.py#L594)
 
 ### Other Python Resources
 
