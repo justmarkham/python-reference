@@ -1,9 +1,9 @@
 '''
-Python 2.7 Quick Reference
+Python Quick Reference
 https://github.com/justmarkham/python-reference
 
 By Kevin Markham (kevin@dataschool.io)
-http://dataschool.io
+http://www.dataschool.io
 
 Table of Contents:
     Imports
@@ -20,7 +20,7 @@ Table of Contents:
     Anonymous (Lambda) Functions
     For Loops and While Loops
     Comprehensions
-    Map, Reduce, Filter
+    Map and Filter
 '''
 
 
@@ -39,10 +39,10 @@ sqrt(25)    # no longer have to reference the module
 from math import cos, floor
 
 # import all functions in a module (generally discouraged)
-from os import *
+from csv import *
 
 # define an alias
-import numpy as np
+import datetime as dt
 
 # show all functions in math module
 dir(math)
@@ -88,11 +88,11 @@ bool([2])
 10 - 4          # subtract (returns 6)
 10 * 4          # multiply (returns 40)
 10 ** 4         # exponent (returns 10000)
-10 / 4          # divide (returns 2 because both types are 'int')
+5 % 4           # modulo (returns 1) - computes the remainder
+10 / 4          # divide (returns 2 in Python 2, returns 2.5 in Python 3)
 10 / float(4)   # divide (returns 2.5)
-5 % 4           # modulo (returns 1) - also known as the remainder
 
-# force '/' in Python 2.x to perform 'true division' (unnecessary in Python 3.x)
+# force '/' in Python 2 to perform 'true division' (unnecessary in Python 3)
 from __future__ import division
 10 / 4          # true division (returns 2.5)
 10 // 4         # floor division (returns 2)
@@ -117,26 +117,29 @@ False or not False and True     # evaluation order: not, and, or
 
 ### CONDITIONAL STATEMENTS ###
 
+# assignment statement
+x = 5
+
 # if statement
 if x > 0:
-    print 'positive'
+    print('positive')
 
 # if/else statement
 if x > 0:
-    print 'positive'
+    print('positive')
 else:
-    print 'zero or negative'
+    print('zero or negative')
 
 # if/elif/else statement
 if x > 0:
-    print 'positive'
+    print('positive')
 elif x == 0:
-    print 'zero'
+    print('zero')
 else:
-    print 'negative'
+    print('negative')
 
 # single-line if statement (sometimes discouraged)
-if x > 0: print 'positive'
+if x > 0: print('positive')
 
 # single-line if/else statement (sometimes discouraged)
 # known as a 'ternary operator'
@@ -162,20 +165,20 @@ len(simpsons)   # returns the length (3)
 simpsons.append('lisa')                 # append element to end
 simpsons.extend(['itchy', 'scratchy'])  # append multiple elements to end
 simpsons.insert(0, 'maggie')            # insert element at index 0 (shifts everything right)
-simpsons.remove('bart')                 # searches for first instance and removes it
-simpsons.pop(0)                         # removes element 0 and returns it
-del simpsons[0]                         # removes element 0 (does not return it)
+simpsons.remove('bart')                 # search for first instance and remove it
+simpsons.pop(0)                         # remove element 0 and return it
+del simpsons[0]                         # remove element 0 (does not return it)
 simpsons[0] = 'krusty'                  # replace element 0
 
 # concatenate lists (slower than 'extend' method)
-neighbors = simpsons + ['ned','rod','todd']
+neighbors = simpsons + ['ned', 'rod', 'todd']
 
 # find elements in a list
 simpsons.count('lisa')      # counts the number of instances
 simpsons.index('itchy')     # returns index of first instance
 
-# list slicing [start:end:stride]
-weekdays = ['mon','tues','wed','thurs','fri']
+# list slicing [start:end:step]
+weekdays = ['mon', 'tues', 'wed', 'thurs', 'fri']
 weekdays[0]         # element 0
 weekdays[0:3]       # elements 0, 1, 2
 weekdays[:3]        # elements 0, 1, 2
@@ -192,7 +195,7 @@ simpsons.sort()
 simpsons.sort(reverse=True)     # sort in reverse
 simpsons.sort(key=len)          # sort by a key
 
-# return a sorted list (but does not modify the original list)
+# return a sorted list (does not modify the original list)
 sorted(simpsons)
 sorted(simpsons, reverse=True)
 sorted(simpsons, key=len)
@@ -211,18 +214,16 @@ new_num = num[:]
 new_num = list(num)
 
 # examine objects
-id(num) == id(same_num) # returns True
-id(num) == id(new_num)  # returns False
-num is same_num         # returns True
+num is same_num         # returns True (checks whether they are the same object)
 num is new_num          # returns False
-num == same_num         # returns True
-num == new_num          # returns True (their contents are equivalent)
+num == same_num         # returns True (checks whether they have the same contents)
+num == new_num          # returns True
 
 
 
 ### TUPLES ###
-## like lists, but they don't change size
 ## properties: ordered, iterable, immutable, can contain multiple data types
+## like lists, but they don't change size
 
 # create a tuple
 digits = (0, 1, 'two')          # create a tuple directly
@@ -266,7 +267,7 @@ s = 'I like you'
 s[0]                # returns 'I'
 len(s)              # returns 10
 
-# string slicing like lists
+# string slicing is like list slicing
 s[:6]               # returns 'I like'
 s[7:]               # returns 'you'
 s[-1]               # returns 'u'
@@ -279,46 +280,45 @@ s.endswith('you')   # returns True
 s.isdigit()         # returns False (returns True if every character in the string is a digit)
 s.find('like')      # returns index of first occurrence (2), but doesn't support regex
 s.find('hate')      # returns -1 since not found
-s.replace('like','love')    # replaces all instances of 'like' with 'love'
+s.replace('like', 'love')    # replaces all instances of 'like' with 'love'
 
 # split a string into a list of substrings separated by a delimiter
-s.split(' ')        # returns ['I','like','you']
-s.split()           # same thing
+s.split(' ')        # returns ['I', 'like', 'you']
+s.split()           # equivalent (since space is the default delimiter)
 s2 = 'a, an, the'
-s2.split(',')       # returns ['a',' an',' the']
+s2.split(',')       # returns ['a', ' an', ' the']
 
 # join a list of strings into one string using a delimiter
-stooges = ['larry','curly','moe']
+stooges = ['larry', 'curly', 'moe']
 ' '.join(stooges)   # returns 'larry curly moe'
 
 # concatenate strings
 s3 = 'The meaning of life is'
 s4 = '42'
 s3 + ' ' + s4       # returns 'The meaning of life is 42'
-s3 + ' ' + str(42)  # same thing
 
 # remove whitespace from start and end of a string
 s5 = '  ham and cheese  '
 s5.strip()          # returns 'ham and cheese'
 
 # string substitutions: all of these return 'raining cats and dogs'
-'raining %s and %s' % ('cats','dogs')                       # old way
-'raining {} and {}'.format('cats','dogs')                   # new way
-'raining {arg1} and {arg2}'.format(arg1='cats',arg2='dogs') # named arguments
+'raining %s and %s' % ('cats', 'dogs')                       # old way
+'raining {} and {}'.format('cats', 'dogs')                   # new way
+'raining {arg1} and {arg2}'.format(arg1='cats', arg2='dogs') # named arguments
 
 # string formatting
-# more examples: http://mkaz.com/2012/10/10/python-string-format/
+# more examples: https://mkaz.tech/python-string-format.html
 'pi is {:.2f}'.format(3.14159)      # returns 'pi is 3.14'
 
 # normal strings versus raw strings
-print 'first line\nsecond line'     # normal strings allow for escaped characters
-print r'first line\nfirst line'     # raw strings treat backslashes as literal characters
+print('first line\nsecond line')    # normal strings allow for escaped characters
+print(r'first line\nfirst line')    # raw strings treat backslashes as literal characters
 
 
 
 ### DICTIONARIES ###
 ## properties: unordered, iterable, mutable, can contain multiple data types
-## made up of key-value pairs
+## made of key-value pairs
 ## keys must be unique, and can be strings, numbers, or tuples
 ## values can be any type
 
@@ -331,35 +331,36 @@ family = {'dad':'homer', 'mom':'marge', 'size':6}
 family = dict(dad='homer', mom='marge', size=6)
 
 # convert a list of tuples into a dictionary
-list_of_tuples = [('dad','homer'), ('mom','marge'), ('size', 6)]
+list_of_tuples = [('dad', 'homer'), ('mom', 'marge'), ('size', 6)]
 family = dict(list_of_tuples)
 
 # examine a dictionary
 family['dad']       # returns 'homer'
 len(family)         # returns 3
-family.keys()       # returns list: ['dad', 'mom', 'size']
-family.values()     # returns list: ['homer', 'marge', 6]
-family.items()      # returns list of tuples:
-                    #   [('dad', 'homer'), ('mom', 'marge'), ('size', 6)]
 'mom' in family     # returns True
 'marge' in family   # returns False (only checks keys)
+
+# returns a list (Python 2) or an iterable view (Python 3)
+family.keys()       # keys: ['dad', 'mom', 'size']
+family.values()     # values: ['homer', 'marge', 6]
+family.items()      # key-value pairs: [('dad', 'homer'), ('mom', 'marge'), ('size', 6)]
 
 # modify a dictionary (does not return the dictionary)
 family['cat'] = 'snowball'              # add a new entry
 family['cat'] = 'snowball ii'           # edit an existing entry
 del family['cat']                       # delete an entry
-family['kids'] = ['bart', 'lisa']       # value can be a list
-family.pop('dad')                       # removes an entry and returns the value ('homer')
+family['kids'] = ['bart', 'lisa']       # dictionary value can be a list
+family.pop('dad')                       # remove an entry and return the value ('homer')
 family.update({'baby':'maggie', 'grandpa':'abe'})   # add multiple entries
 
-# accessing values more safely with 'get'
+# access values more safely with 'get'
 family['mom']                       # returns 'marge'
-family.get('mom')                   # same thing
-family['grandma']                   # throws an error
-family.get('grandma')               # returns None
+family.get('mom')                   # equivalent
+family['grandma']                   # throws an error since the key does not exist
+family.get('grandma')               # returns None instead
 family.get('grandma', 'not found')  # returns 'not found' (the default)
 
-# accessing a list element within a dictionary
+# access a list element within a dictionary
 family['kids'][0]                   # returns 'bart'
 family['kids'].remove('lisa')       # removes 'lisa'
 
@@ -369,9 +370,9 @@ family['kids'].remove('lisa')       # removes 'lisa'
 
 
 ### SETS ###
-## like dictionaries, but with keys only (no values)
 ## properties: unordered, iterable, mutable, can contain multiple data types
-## made up of unique elements (strings, numbers, or tuples)
+## made of unique elements (strings, numbers, or tuples)
+## like dictionaries, but with keys only (no values)
 
 # create an empty set
 empty_set = set()
@@ -395,10 +396,10 @@ languages.add('sql')        # add a new element
 languages.add('r')          # try to add an existing element (ignored, no error)
 languages.remove('java')    # remove an element
 languages.remove('c')       # try to remove a non-existing element (throws an error)
-languages.discard('c')      # removes an element if present, but ignored otherwise
-languages.pop()             # removes and returns an arbitrary element
-languages.clear()           # removes all elements
-languages.update('go', 'spark') # add multiple elements (can also pass a list or set)
+languages.discard('c')      # remove an element if present, but ignored otherwise
+languages.pop()             # remove and return an arbitrary element
+languages.clear()           # remove all elements
+languages.update(['go', 'spark'])  # add multiple elements (can also pass a set)
 
 # get a sorted list of unique elements from a list
 sorted(set([9, 0, 2, 1, 0]))    # returns [0, 1, 2, 9]
@@ -409,14 +410,14 @@ sorted(set([9, 0, 2, 1, 0]))    # returns [0, 1, 2, 9]
 
 # define a function with no arguments and no return values
 def print_text():
-    print 'this is text'
+    print('this is text')
 
 # call the function
 print_text()
 
 # define a function with one argument and no return values
 def print_this(x):
-    print x
+    print(x)
 
 # call the function
 print_this(3)       # prints 3
@@ -444,7 +445,7 @@ def calc(a, b, op='add'):
     elif op == 'sub':
         return a - b
     else:
-        print 'valid operations are add and sub'
+        print('valid operations are add and sub')
 
 # call the function
 calc(10, 4, op='add')   # returns 14
@@ -493,47 +494,46 @@ sorted(simpsons, key=lambda word: word[-1])
 
 ### FOR LOOPS AND WHILE LOOPS ###
 
-# range returns a list of integers
-range(0, 3)     # returns [0, 1, 2]: includes first value but excludes second value
-range(3)        # same thing: starting at zero is the default
-range(0, 5, 2)  # returns [0, 2, 4]: third argument specifies the 'stride'
+# range returns a list of integers (Python 2) or a sequence (Python 3)
+range(0, 3)     # returns [0, 1, 2]: includes start value but excludes stop value
+range(3)        # equivalent: default start value is 0
+range(0, 5, 2)  # returns [0, 2, 4]: third argument is the step value
 
-# for loop (not recommended)
+# Python 2 only: use xrange to create a sequence rather than a list (saves memory)
+xrange(100, 100000, 5)
+
+# for loop (not the recommended style)
 fruits = ['apple', 'banana', 'cherry']
 for i in range(len(fruits)):
-    print fruits[i].upper()
+    print(fruits[i].upper())
 
-# alternative for loop (recommended style)
+# for loop (recommended style)
 for fruit in fruits:
-    print fruit.upper()
-
-# use xrange when iterating over a large sequence to avoid actually creating the integer list in memory
-for i in xrange(10**6):
-    pass
+    print(fruit.upper())
 
 # iterate through two things at once (using tuple unpacking)
 family = {'dad':'homer', 'mom':'marge', 'size':6}
 for key, value in family.items():
-    print key, value
+    print(key, value)
 
 # use enumerate if you need to access the index value within the loop
 for index, fruit in enumerate(fruits):
-    print index, fruit
+    print(index, fruit)
 
 # for/else loop
 for fruit in fruits:
     if fruit == 'banana':
-        print "Found the banana!"
-        break   # exit the loop and skip the 'else' block
+        print('Found the banana!')
+        break    # exit the loop and skip the 'else' block
 else:
     # this block executes ONLY if the for loop completes without hitting 'break'
-    print "Can't find the banana"
+    print("Can't find the banana")
 
 # while loop
 count = 0
 while count < 5:
-    print "This will print 5 times"
-    count += 1      # equivalent to 'count = count + 1'
+    print('This will print 5 times')
+    count += 1    # equivalent to 'count = count + 1'
 
 
 
@@ -591,9 +591,10 @@ fruit_indices = {fruit:index for index, fruit in enumerate(fruits)} # {'apple': 
 
 
 
-### MAP, REDUCE, FILTER ###
+### MAP AND FILTER ###
 
-# 'map' applies a function to every element of a sequence and returns a list
+# 'map' applies a function to every element of a sequence
+# ...and returns a list (Python 2) or iterator (Python 3)
 simpsons = ['homer', 'marge', 'bart']
 map(len, simpsons)                      # returns [5, 5, 4]
 map(lambda word: word[-1], simpsons)    # returns ['r', 'e', 't']
@@ -602,10 +603,10 @@ map(lambda word: word[-1], simpsons)    # returns ['r', 'e', 't']
 [len(word) for word in simpsons]
 [word[-1] for word in simpsons]
 
-# 'reduce' applies a binary function to the first two elements of a sequence,
-# then repeats with the result and the next element, through the end of the sequence
-reduce(lambda x, y: x + y, range(4))    # (((0+1)+2)+3) = 6
+# 'filter' returns a list (Python 2) or iterator (Python 3) containing
+# ...the elements from a sequence for which a condition is True
+nums = range(5)
+filter(lambda x: x % 2 == 0, nums)      # returns [0, 2, 4]
 
-# 'filter' returns a sequence containing the items from the original sequence
-# for which the condition is True
-filter(lambda x: x % 2 == 0, range(5))  # returns [0, 2, 4]
+# equivalent list comprehension
+[num for num in nums if num % 2 == 0]
