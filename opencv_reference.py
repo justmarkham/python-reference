@@ -90,8 +90,23 @@ gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
 #Blur image
 
 #Gaussian blur
-#Used before processing an image to reduce digital noise.
+#Very effective to remove gaussian noise in an image
+#It is recommended to convert the image to grayscale before applying the blur filter.
 blurred = cv2.GaussianBlur(image, (5, 5), 0)    #image: source image
                                                 #(5, 5): Kernel size, must be positive and odd
+
+#Average blur
+#Used to smooth an image applying normalized box filter
+#Average filter. takes the average of all the pixels under the kernel
+blurred = cv2.blur(image, (5,5))        #image: Source image
+                                        #(5,5): Kernel size, must be positive and odd
+
+#Median blur
+#Used to remove "salt and pepper" noise from an image
+#Computes the median of all the pixels under the kernel
+blurred = cv2.medianBlur(image, 5)      #image: Source image
+                                        #5: Kernel size, most be positive and odd
+
+
 
 
