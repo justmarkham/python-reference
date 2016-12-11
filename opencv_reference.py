@@ -59,9 +59,9 @@ imgtype = image.dtype       #Image type
 
 #Display an image with openCV
 cv2.namedWindow(window_name, property)  #creates a window with specific properties:
-                                        #cv.WINDOW_NORMAL :User can resize the window (no constrain)
-                                        #cv.WINDOW_AUTOSIZE: Window size is automatically adjusted
-                                        #cv.WINDOW_OPENGL: Window created with OPENGL support
+                                        #cv2.WINDOW_NORMAL :User can resize the window (no constrain)
+                                        #cv2.WINDOW_AUTOSIZE: Window size is automatically adjusted
+                                        #cv2.WINDOW_OPENGL: Window created with OPENGL support
 
 
 cv2.imshow(window_name, image)  #display image, automatic window properties
@@ -86,4 +86,12 @@ plt.show()
 
 #convert image to grayscale
 gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+
+#Blur image
+
+#Gaussian blur
+#Used before processing an image to reduce digital noise.
+blurred = cv2.GaussianBlur(image, (5, 5), 0)    #image: source image
+                                                #(5, 5): Kernel size, must be positive and odd
+
 
