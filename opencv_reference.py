@@ -38,6 +38,7 @@ from matplotlib import pyplot as plt
 
 #Extended mahotas functionality
 import mahotas
+import mahotas as mh    #typical import 
 
 #Import if command line arguments are required
 import argparse
@@ -56,6 +57,8 @@ image = cv2.imread(image, cv2.IMREAD_GRAYSCALE) #both commands do the same thing
 (h, w, c) = image.shape     #h: Height, w: Width, c: Channels
 size = image.size           #Number of pixels
 imgtype = image.dtype       #Image type
+max = image.max()           #Maximum value
+min = image.min()           #Minimum value
 
 #Display an image with openCV
 cv2.namedWindow(window_name, property)  #creates a window with specific properties:
@@ -107,6 +110,9 @@ blurred = cv2.blur(image, (5,5))        #image: Source image
 blurred = cv2.medianBlur(image, 5)      #image: Source image
                                         #5: Kernel size, most be positive and odd
 
+#Applyng Gaussian blur filter with Mahotas
+blurred = mahotas.gaussian_filter(image, 8) #imageö Source image
+                                            #8: standard deviation for Gaussian kernel (in pixel units)
 
 
 
