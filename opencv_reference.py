@@ -116,3 +116,30 @@ blurred = mahotas.gaussian_filter(image, 8) #imageö Source image
 
 
 
+#Thresholding an image
+
+""" Thresholding is the binarization of an image:
+    any value over an index (C) is set to 255 (White)
+    any value under the index (C) is set ot 0 (black)
+
+    inverse binarizacion is also possible:
+    any value over the index (C) is the to 0 (black)
+    any value under the index (C) is set to 255 (white)"""
+
+#Simple thresholding
+#requires user intervetion to provide the index (C) value
+(T, thresh) = cv2.threshold(src, C, 255, cv2.THRESH_BINARY) #src: source image
+                                                            #C: index (as explained above)
+                                                            #255: max value to assign if value greater than C
+                                                            #Method:    cv2.THRESH_BINARY
+                                                            #           cv2.THRESH_BINARY_INV
+                                                            #Returns:   T: max value
+                                                            #           thresh: Thresholded image
+#examples of simple thresholding
+(T, thresh) = cv2.threshold(blurred, 155, 255, cv2.THRESH_BINARY)
+(T, thresh) = cv2.threshold(blurred, 155, 255, cv2.THRESH_BINARY_INV)
+
+
+
+
+
