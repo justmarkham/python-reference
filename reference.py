@@ -491,6 +491,18 @@ sorted(simpsons, key=last_letter)
 sorted(simpsons, key=lambda word: word[-1])
 
 
+### Classes and objects (Object Oriented Programming) ###
+#Class definition
+class myClass(self):
+
+#Constructor definiton
+class myClass(self):
+    def __init__ (self, parm1, parm2):
+        self.parm1 = parm1
+        self.parm2 = parm2
+        
+
+
 
 ### FOR LOOPS AND WHILE LOOPS ###
 
