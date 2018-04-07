@@ -307,7 +307,7 @@ s5.strip()          # returns 'ham and cheese'
 'raining {arg1} and {arg2}'.format(arg1='cats', arg2='dogs') # named arguments
 
 # string formatting
-# more examples: https://mkaz.tech/python-string-format.html
+# more examples: https://mkaz.blog/code/python-string-format-cookbook/
 'pi is {:.2f}'.format(3.14159)      # returns 'pi is 3.14'
 
 # normal strings versus raw strings
