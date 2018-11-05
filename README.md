@@ -25,7 +25,7 @@ Click to jump to the relevant section of the script or the notebook:
 4. Comparisons and Boolean Operations ([script](reference.py#L102), [notebook](http://nbviewer.jupyter.org/github/justmarkham/python-reference/blob/master/reference.ipynb#4.-Comparisons-and-Boolean-Operations))
 5. Conditional Statements ([script](reference.py#L121), [notebook](http://nbviewer.jupyter.org/github/justmarkham/python-reference/blob/master/reference.ipynb#5.-Conditional-Statements))
 6. Lists ([script](reference.py#L150), [notebook](http://nbviewer.jupyter.org/github/justmarkham/python-reference/blob/master/reference.ipynb#6.-Lists))
-7. Tuples ([script](reference.py#224), [notebook](http://nbviewer.jupyter.org/github/justmarkham/python-reference/blob/master/reference.ipynb#7.-Tuples))
+7. Tuples ([script](reference.py#L224), [notebook](http://nbviewer.jupyter.org/github/justmarkham/python-reference/blob/master/reference.ipynb#7.-Tuples))
 8. Strings ([script](reference.py#L259), [notebook](http://nbviewer.jupyter.org/github/justmarkham/python-reference/blob/master/reference.ipynb#8.-Strings))
 9. Dictionaries ([script](reference.py#L319), [notebook](http://nbviewer.jupyter.org/github/justmarkham/python-reference/blob/master/reference.ipynb#9.-Dictionaries))
 10. Sets ([script](reference.py#L372), [notebook](http://nbviewer.jupyter.org/github/justmarkham/python-reference/blob/master/reference.ipynb#10.-Sets))
