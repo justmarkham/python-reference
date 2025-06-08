@@ -37,9 +37,7 @@ Click to jump to the relevant section of the script or the notebook:
 
 ### Other Python Resources
 
-If you like the general format of this guide, but need **more explanation of each topic**, I highly recommend reading the Appendix of [Python for Data Analysis](http://shop.oreilly.com/product/0636920023784.do). It presents the essentials of the Python language in a clear and focused manner.
-
-If you are looking for a resource that will help you to **learn Python from scratch**, this is [my list of recommended resources](https://github.com/justmarkham/DAT8#python-resources).
+If you are looking for a resource that will help you to **learn Python from scratch**, check out my course, [Python Essentials for Data Scientists](https://courses.dataschool.io/python-essentials-for-data-scientists).
 
 ### Suggestions or Corrections
 
